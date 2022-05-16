@@ -1,32 +1,21 @@
 package com.tns.framwork;
 
-public abstract class PrimeAcc extends ShopAcc
-{
-	private static boolean isPrime;
-	private static final float deliveryCharges=0.0f;
-	
-	
-	
-	public PrimeAcc(int accNo,String accNm, float charges,boolean isPrime)
-	{
-		super(accNo,accNm,charges);
-		//this.isPrime = isPrime;
-		PrimeAcc.isPrime=isPrime;
+public abstract class PrimeAcc extends ShopAcc {
+	private boolean isPrime;
+	@SuppressWarnings("unused")
+	static final private float deliveryCharges=0.0f;
+	public PrimeAcc(int accNo, String accNm, float charges,boolean isPrime) {
+		super(accNo, accNm, charges);
+        this.isPrime=isPrime;
 	}
-
-
-
-	public static boolean getisPrime() {
-		return isPrime;
+	public void bookProduct(float charges) {
+		System.out.println("Account no is "+this.getAccNo()+"   Account name is   "+this.getAccNm()+ "  "+"charge is "+charges);
+		
 	}
-
-
-
-	
-
-
-	public static float getDeliverycharges() {
-		return deliveryCharges;
+	@Override
+	public String toString() {
+		return String.format("PrimeAcc [isPrime=%s, toString()=%s]", isPrime,
+				super.toString());
 	}
 	
 	

@@ -1,39 +1,38 @@
 package com.tns.framwork;
 
-public abstract class ShopAcc
-{
-	private static int accNo;
-	private static String accNm;
-	private static float charges;
-	
+public abstract class ShopAcc {
+	private int accNo;
+	private String accNm;
+	private float charges;
 	public ShopAcc(int accNo, String accNm, float charges) {
 		
-		ShopAcc.accNo = accNo;
-		ShopAcc.accNm = accNm;
-		ShopAcc.charges = charges;
-	}  
-	public abstract void bookProduct (float charges);
-	public abstract void iteam(float charges);
-	public static int getAccNo() {
-		return accNo;
+		this.accNo = accNo;
+		this.accNm = accNm;
+		this.charges = charges;
 	}
-	
-	public static String getAccNm() {
+	abstract public void bookProduct(float charges);
+	 public void items(float charges) {
+		 System.out.println(charges);
+	 }
+	 
+	 
+	public String getAccNm() {
 		return accNm;
 	}
-	public static void setAccNm(String accNm) {
-		ShopAcc.accNm = accNm;
+	public int getAccNo() {
+		return accNo;
 	}
-	public static float getCharges() {
+	public float getCharges() {
 		return charges;
 	}
-	public static float getCharge() {
+	public float getCharge() {
 		return charges;
 	}
 	@Override
 	public String toString() {
-		return "ShopeAcc[accNo="+accNo+",accNm="+accNm+",charges="+charges+"]";
+		return String.format("ShopAcc [accNo=%s, accNm=%s, charges=%s]", accNo, accNm, charges);
 	}
 	
-}
+	
 
+}
