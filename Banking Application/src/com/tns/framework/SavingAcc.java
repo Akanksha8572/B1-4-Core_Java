@@ -2,7 +2,6 @@ package com.tns.framework;
 
 public abstract class SavingAcc extends BankAcc{
 	private static boolean isSalary;
-	@SuppressWarnings("unused")
 	private static final float MINBAL=0.0f;	
 	
 	public SavingAcc(int accNo, String accNm, float accBal,boolean isSalary) {
